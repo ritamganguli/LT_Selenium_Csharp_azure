@@ -10060,11 +10060,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ritamg\\Downloads\\nunit-selenium-hyperexecute-sample-main\\nunit-selenium-hyperexecute-sample-main\\NUnitHyperTestDemo\\NUnitHyperTestDemo.csproj",
+      "projectUniqueName": "C:\\Users\\ritamg\\Documents\\GitHub\\LT_Selenium_Csharp_azure\\C# nunit selenium azure\\NUnitHyperTestDemo\\NUnitHyperTestDemo.csproj",
       "projectName": "NUnitHyperTestDemo",
-      "projectPath": "C:\\Users\\ritamg\\Downloads\\nunit-selenium-hyperexecute-sample-main\\nunit-selenium-hyperexecute-sample-main\\NUnitHyperTestDemo\\NUnitHyperTestDemo.csproj",
+      "projectPath": "C:\\Users\\ritamg\\Documents\\GitHub\\LT_Selenium_Csharp_azure\\C# nunit selenium azure\\NUnitHyperTestDemo\\NUnitHyperTestDemo.csproj",
       "packagesPath": "C:\\Users\\ritamg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ritamg\\Downloads\\nunit-selenium-hyperexecute-sample-main\\nunit-selenium-hyperexecute-sample-main\\NUnitHyperTestDemo\\obj\\",
+      "outputPath": "C:\\Users\\ritamg\\Documents\\GitHub\\LT_Selenium_Csharp_azure\\C# nunit selenium azure\\NUnitHyperTestDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ritamg\\AppData\\Roaming\\NuGet\\NuGet.Config",
