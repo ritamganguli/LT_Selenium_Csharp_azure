@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ritamg\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ritamg\\.nuget\\packages"
+    ]
+  }
+}
