@@ -1,0 +1,49 @@
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: linux
+
+autosplit: true
+retryOnFailure: true
+
+maxRetries: 1
+concurrency: 2
+
+project: NUnitHyperTestDemo/NUnitHyperTestDemo.csproj
+solution: NUnitHyperTestDemo.sln
+
+env:
+  NUGET_PACKAGES: '/home/ltuser/.nuget/packages/'
+  NUGET_HTTP_CACHE_PATH: '/home/ltuser/.local/share/NuGet/v3-cache'
+  NUGET_PLUGINS_CACHE_PATH: '/home/ltuser/.local/share/NuGet/plugins-cache'
+  # PAT: ${{ .secrets.testKey }}
+
+pre:
+ # https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-list-package
+ - dotnet restore
+ - dotnet list $project package > packages.txt
+ - dotnet build -c Release
+
+post:
+  - cat yaml/linux/nunit_hyperexecute_autosplit_sample.yaml
+
+mergeArtifacts: true
+
+uploadArtefacts:
+  - name: ExecutionSnapshots
+    path:
+     - NUnitHyperTestDemo/Reports/**
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  # command: grep 'class' HyperTestDemo -ir --include=\*.cs --exclude=DriverFactory.cs --exclude=HyperTestDemo.AssemblyInfo.cs | awk '{print$4}'
+  # command: dotnet run --project HyperTestDiscoverer/HyperTestDiscoverer.csproj NUnitHyperTestDemo/bin/Debug/netcoreapp3.1/NUnitHyperTestDemo.dll
+  command: grep 'Category' NUnitHyperTestDemo -ir --include=\*.cs --exclude=DriverFactory.cs --exclude=HyperTestDemo.AssemblyInfo.cs | awk '{print$2}' | grep -o '".*"'
+
+testRunnerCommand: dotnet test $solution --filter TestCategory=$test 
+
+jobLabel: [selenium-Nunit, linux, autosplit]  
